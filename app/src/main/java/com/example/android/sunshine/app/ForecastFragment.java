@@ -106,7 +106,7 @@ public class ForecastFragment extends Fragment {
                 String c = city[0];
                 final int numberOfDays = 10;
                 if (c == null) {
-                    c = "Riga";
+                    c = "Riga"; //todo conf
                 }
                 String baseUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + c + "&APPID=a3a425c84780382a5a9a387bfb79c993&mode=JSON&units=metric&cnt=" + numberOfDays;
                 URL url = new URL(baseUrl);
