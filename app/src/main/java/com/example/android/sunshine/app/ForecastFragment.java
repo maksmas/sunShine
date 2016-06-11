@@ -169,11 +169,17 @@ public class ForecastFragment extends Fragment {
     }
 
     private String formatHighLows(double high, double low) {
+
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String units = sharedPref.getString("units", "Metric");
+        if (units.equals("Imperial")) {
+            high = high * 1.8 + 32;
+            low = low * 1.8D + 32;
+        }
         long roundedHigh = Math.round(high);
         long roundedLow = Math.round(low);
 
-        String highLowStr = roundedHigh + "/" + roundedLow;
-        return highLowStr;
+        return roundedHigh + "/" + roundedLow;
     }
 
     private String[] getWeatherDataFromJson(String forecastJsonStr, int numDays)

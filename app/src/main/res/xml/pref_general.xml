@@ -3,4 +3,8 @@
     <EditTextPreference android:title="Location" android:key="location"
         android:defaultValue="Riga" android:inputType="text" android:singleLine="true" />
 
+    <ListPreference android:title="Temperature units" android:key="units"
+        android:defaultValue="Metric" android:entryValues="@array/units"
+        android:entries="@array/units" />
+
 </PreferenceScreen>
